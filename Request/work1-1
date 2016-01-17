@@ -1,0 +1,16 @@
+
+1. 성적을 랜덤하게 생성하는 프로그램을 만드세요.
+* 실행 방법
+..> java RecordMaker [count] [datafile]
+
+* 결과
+..> java RecordMaker 3 datafile
+datafile 파일을 열어보면, count만큼 row의 데이터가 생성되면 됩니다.
+위 command 실행결과 datafile은
+NT01002 80
+NT01206 85
+NT01321 15
+와 같이 생성됨.
+- NT는 prefix. 뒤는 random으로 구성함.
+- score는 0점이상 100점 미만. random
+- 사번중복 없어야 함. 
