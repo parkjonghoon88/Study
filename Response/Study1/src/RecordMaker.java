@@ -17,16 +17,19 @@ public class RecordMaker {
 		String txt = "";
 		
 		
+		
 		for(int i=0; i<cnt; i++)
 		{
-			String data = "";
 			
-			int iRandom_Jumsu = new Random().nextInt(100);
-			String str_No = getRandomNo();
+			Student student_object = new Student();
+			
+			student_object.setSTUDENT_NO(student_object.getRandStudentNo());
+			student_object.setSTUDENT_JUMSU(student_object.getRandStudentJumSu());
+			
+			
 			boolean isConstrain = false;
 			
-			
-			if(!txt.contains(str_No))
+			if(!txt.contains(student_object.getRandStudentNo()))
 			{
 				isConstrain = false;
 			}
@@ -35,8 +38,8 @@ public class RecordMaker {
 				//학번 중복
 				for(int j=0; j<10; j++)
 				{
-					System.out.println("중복 데이터  : " +j  +", "+  str_No);
-					if(!txt.contains(str_No))
+					System.out.println("중복 데이터  : " +j  +", "+  student_object.getRandStudentNo());
+					if(!txt.contains(student_object.getRandStudentNo()))
 					{
 						isConstrain = false;
 						break;
@@ -52,8 +55,7 @@ public class RecordMaker {
 			//학번 중복 없을 경우 저장
 			if(!isConstrain)
 			{
-				data = str_No + " " + iRandom_Jumsu + "\n";
-				txt += data;
+				txt += student_object.getRandStudentNo() + " " + student_object.getRandStudentJumSu() + "\n";
 			}
 				
 			
@@ -77,42 +79,5 @@ public class RecordMaker {
 		}
 	}
 	
-	
-	//랜덤 학번 생성
-	public static String getRandomNo()
-	{
-		String result = "";
-		
-		int iRandom_No = new Random().nextInt(100000);
-		
-		
-		
-		String str_random = "";
-//		if(0<=iRandom_No && iRandom_No<10)
-//		{
-//			str_random = "0000"+iRandom_No;
-//		}
-//		else if(10<=iRandom_No && iRandom_No<100)
-//		{
-//			str_random = "000"+iRandom_No;
-//		}
-//		else if(100<=iRandom_No && iRandom_No<1000)
-//		{
-//			str_random = "00"+iRandom_No;
-//		}
-//		else if(1000<=iRandom_No && iRandom_No<10000)
-//		{
-//			str_random = "0"+iRandom_No;
-//		}
-//		else 
-//		{
-//			str_random = Integer.toString(iRandom_No);
-//		}
-		str_random = String.format("%05d", iRandom_No); 
-		
-		result = "NT"+ str_random;
-		
-		return result;
-	}
 	
 }
