@@ -88,26 +88,27 @@ public class RecordMaker {
 		
 		
 		String str_random = "";
-		if(0<=iRandom_No && iRandom_No<10)
-		{
-			str_random = "0000"+iRandom_No;
-		}
-		else if(10<=iRandom_No && iRandom_No<100)
-		{
-			str_random = "000"+iRandom_No;
-		}
-		else if(100<=iRandom_No && iRandom_No<1000)
-		{
-			str_random = "00"+iRandom_No;
-		}
-		else if(1000<=iRandom_No && iRandom_No<10000)
-		{
-			str_random = "0"+iRandom_No;
-		}
-		else 
-		{
-			str_random = Integer.toString(iRandom_No);
-		}
+//		if(0<=iRandom_No && iRandom_No<10)
+//		{
+//			str_random = "0000"+iRandom_No;
+//		}
+//		else if(10<=iRandom_No && iRandom_No<100)
+//		{
+//			str_random = "000"+iRandom_No;
+//		}
+//		else if(100<=iRandom_No && iRandom_No<1000)
+//		{
+//			str_random = "00"+iRandom_No;
+//		}
+//		else if(1000<=iRandom_No && iRandom_No<10000)
+//		{
+//			str_random = "0"+iRandom_No;
+//		}
+//		else 
+//		{
+//			str_random = Integer.toString(iRandom_No);
+//		}
+		str_random = String.format("%05d", iRandom_No); 
 		
 		result = "NT"+ str_random;
 		
