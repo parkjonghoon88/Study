@@ -1,21 +1,23 @@
 public class Student {
 	
-	private String STUDENT_NO = "";
-	private int STUDENT_JUMSU = 0;
+	private String studentNo = "";
+	private int studentJumsu = 0;
 	
 	
-	public String getSTUDENT_NO() {
-		return STUDENT_NO;
+	public String getStudentNo() {
+		return studentNo;
 	}
-	public void setSTUDENT_NO(String sTUDENT_NO) {
-		STUDENT_NO = sTUDENT_NO;
+	public void setStudentNo(String studentNo) {
+		this.studentNo = studentNo;
 	}
-	public int getSTUDENT_JUMSU() {
-		return STUDENT_JUMSU;
+	public int getStudentJumsu() {
+		return studentJumsu;
 	}
-	public void setSTUDENT_JUMSU(int sTUDENT_JUMSU) {
-		STUDENT_JUMSU = sTUDENT_JUMSU;
+	public void setStudentJumsu(int studentJumsu) {
+		this.studentJumsu = studentJumsu;
 	}
+	
+	
 	
 
 }

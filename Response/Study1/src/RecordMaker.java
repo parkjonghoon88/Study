@@ -12,24 +12,24 @@ public class RecordMaker {
 		}
 		
 		
-		int iCnt = Integer.parseInt(args[0]);
-		String sFileName = args[1];
-		String sText = "";
+		int cnt = Integer.parseInt(args[0]);
+		String fileName = args[1];
+		String text = "";
 		
 		
 		
-		for(int i=0; i<iCnt; i++)
+		for(int i=0; i<cnt; i++)
 		{
 			
 			Student dtoStudent = new Student();
 			
-			dtoStudent.setSTUDENT_NO(getRandStudentNo());
-			dtoStudent.setSTUDENT_JUMSU(getRandStudentJumSu());
+			dtoStudent.setStudentNo(getRandStudentNo());
+			dtoStudent.setStudentJumsu(getRandStudentJumSu());
 			
 			
 			boolean isConstrain = false;
 			
-			if(!sText.contains(getRandStudentNo()))
+			if(!text.contains(getRandStudentNo()))
 			{
 				isConstrain = false;
 			}
@@ -39,7 +39,7 @@ public class RecordMaker {
 				for(int j=0; j<10; j++)
 				{
 					System.out.println("중복 데이터  : " +j  +", "+  getRandStudentNo());
-					if(!sText.contains(getRandStudentNo()))
+					if(!text.contains(getRandStudentNo()))
 					{
 						isConstrain = false;
 						break;
@@ -55,23 +55,23 @@ public class RecordMaker {
 			//학번 중복 없을 경우 저장
 			if(!isConstrain)
 			{
-				sText += getRandStudentNo() + " " + getRandStudentJumSu() + "\n";
+				text += getRandStudentNo() + " " + getRandStudentJumSu() + "\n";
 			}
 				
 			
 		}
-		System.out.println(sText);
+		System.out.println(text);
 		
 		
 		try
 		{
 			//txt파일 생성 및 작성 true로 주면 그뒤에 이어서 작성
-			FileWriter fFilwWriter = new FileWriter(sFileName+".txt");
+			FileWriter fileWriter = new FileWriter(fileName+".txt");
 			
-			fFilwWriter.write(sText);
-			fFilwWriter.flush();
+			fileWriter.write(text);
+			fileWriter.flush();
 			
-			fFilwWriter.close();
+			fileWriter.close();
 		}
 		catch(Exception e)
 		{
@@ -84,13 +84,13 @@ public class RecordMaker {
 	{
 		String result = "";
 		
-		int iRandom_No = new Random().nextInt(100000);
+		int randomNo = new Random().nextInt(100000);
 		
 		
-		String str_random = "";
-		str_random = String.format("%05d", iRandom_No); 
+		String randomData = "";
+		randomData = String.format("%05d", randomNo); 
 		
-		result = "NT"+ str_random;
+		result = "NT"+ randomData;
 		
 		return result;
 	}
