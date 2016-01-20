@@ -1,0 +1,13 @@
+2. 생성된 성적을 분석하는 프로그램을 만드시오.
+* 실행 방법 
+..> java RecordAnalyzer [command] [datafile]
+ 
+* 결과
+..> java RecordAnalyzer max datafile
+result : 95
+ 
+* command는 아래가 가능함. 
+max, min, avg
+ 
+* datafile 포맷은 1번 문제에서 생성된 파일로,  line 별로 사번 [공백] 성적입니다.
+예) NT12345 85
