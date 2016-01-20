@@ -12,24 +12,24 @@ public class RecordMaker {
 		}
 		
 		
-		int cnt = Integer.parseInt(args[0]);
-		String filename = args[1];
-		String txt = "";
+		int iCnt = Integer.parseInt(args[0]);
+		String sFileName = args[1];
+		String sText = "";
 		
 		
 		
-		for(int i=0; i<cnt; i++)
+		for(int i=0; i<iCnt; i++)
 		{
 			
-			Student student_object = new Student();
+			Student dtoStudent = new Student();
 			
-			student_object.setSTUDENT_NO(student_object.getRandStudentNo());
-			student_object.setSTUDENT_JUMSU(student_object.getRandStudentJumSu());
+			dtoStudent.setSTUDENT_NO(getRandStudentNo());
+			dtoStudent.setSTUDENT_JUMSU(getRandStudentJumSu());
 			
 			
 			boolean isConstrain = false;
 			
-			if(!txt.contains(student_object.getRandStudentNo()))
+			if(!sText.contains(getRandStudentNo()))
 			{
 				isConstrain = false;
 			}
@@ -38,8 +38,8 @@ public class RecordMaker {
 				//학번 중복
 				for(int j=0; j<10; j++)
 				{
-					System.out.println("중복 데이터  : " +j  +", "+  student_object.getRandStudentNo());
-					if(!txt.contains(student_object.getRandStudentNo()))
+					System.out.println("중복 데이터  : " +j  +", "+  getRandStudentNo());
+					if(!sText.contains(getRandStudentNo()))
 					{
 						isConstrain = false;
 						break;
@@ -55,29 +55,54 @@ public class RecordMaker {
 			//학번 중복 없을 경우 저장
 			if(!isConstrain)
 			{
-				txt += student_object.getRandStudentNo() + " " + student_object.getRandStudentJumSu() + "\n";
+				sText += getRandStudentNo() + " " + getRandStudentJumSu() + "\n";
 			}
 				
 			
 		}
-		System.out.println(txt);
+		System.out.println(sText);
 		
 		
 		try
 		{
 			//txt파일 생성 및 작성 true로 주면 그뒤에 이어서 작성
-			FileWriter fw = new FileWriter(filename+".txt");
+			FileWriter fFilwWriter = new FileWriter(sFileName+".txt");
 			
-			fw.write(txt);
-			fw.flush();
+			fFilwWriter.write(sText);
+			fFilwWriter.flush();
 			
-			fw.close();
+			fFilwWriter.close();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();			
 		}
 	}
+	
+	
+	public static String getRandStudentNo()
+	{
+		String result = "";
+		
+		int iRandom_No = new Random().nextInt(100000);
+		
+		
+		String str_random = "";
+		str_random = String.format("%05d", iRandom_No); 
+		
+		result = "NT"+ str_random;
+		
+		return result;
+	}
+	
+	
+	public static int getRandStudentJumSu()
+	{
+		int result = new Random().nextInt(100);
+		
+		return result;
+	}
+
 	
 	
 }
