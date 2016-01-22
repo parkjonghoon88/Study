@@ -27,37 +27,9 @@ public class RecordAnalyzer {
 		String resultValue = "";
 		List<Student> listData = new ArrayList<>();
 
-		DataProvider object = new DataProvider() {
-
-			@Override
-			public List<Student> getStudents() {
-				// TODO Auto-generated method stub
-				List<Student> list = new ArrayList<>();
-				try 
-				{
-					
-					BufferedReader in = new BufferedReader(new FileReader(dataFile + ".txt"));
-					String strData;
-
-					while ((strData = in.readLine()) != null) 
-					{
-						Student object = new Student();
-						object.setStudentNo(strData.substring(0, 7));
-						object.setStudentJumsu(Integer.parseInt(strData.substring(8)));
-						System.out.println(strData);
-						list.add(object);
-					}
-
-					in.close();
-				} catch (IOException e) {
-					System.err.println(e);// 에러가 있다면 메시지 출력
-					System.exit(1);
-				}
-				return list;
-			}
-		};
-
-		listData.addAll(object.getStudents());
+		DataManager dataManager = new DataManager();
+		dataManager.setFileName(dataFile);
+		listData.addAll(dataManager.getStudents());
 
 		if (listData.size() > 0) {
 			if (command.equals("max")) {

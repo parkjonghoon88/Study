@@ -72,36 +72,9 @@ public class RecordMaker {
 		}
 		
 		
-		DataWriter object = new DataWriter()
-		{
-
-			@Override
-			public void writeData(List<Student> data) {
-				// TODO Auto-generated method stub
-				try
-				{
-					String text = "";
-					for(int i=0; i<data.size(); i++)
-					{
-						text += data.get(i).getStudentNo()+ " " + data.get(i).getStudentJumsu() + "\n";
-					}
-					
-					//txt파일 생성 및 작성 true로 주면 그뒤에 이어서 작성
-					FileWriter fileWriter = new FileWriter(fileName+".txt");
-					
-					fileWriter.write(text);
-					fileWriter.flush();
-					
-					fileWriter.close();
-				}
-				catch(Exception e)
-				{
-					e.printStackTrace();			
-				}
-			}
-		};
-		
-		object.writeData(listData);
+		DataManager dataManager = new DataManager();
+		dataManager.setFileName(fileName);
+		dataManager.writeData(listData);
 		
 	}
 	
