@@ -1,3 +1,4 @@
+package com.study;
 public class Student {
 	
 	private String studentNo = "";
@@ -17,7 +18,4 @@ public class Student {
 		this.studentJumsu = studentJumsu;
 	}
 	
-	
-	
-
 }

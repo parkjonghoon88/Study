@@ -1,7 +1,13 @@
+package com.study;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
+import com.accesser.DataWriter;
+
 public class RecordMaker {
+	
 
 	public static void main(String args[])
 	{
@@ -15,7 +21,7 @@ public class RecordMaker {
 		int cnt = Integer.parseInt(args[0]);
 		String fileName = args[1];
 		String text = "";
-		
+		List<Student> listData = new ArrayList<Student>();
 		
 		
 		for(int i=0; i<cnt; i++)
@@ -55,28 +61,48 @@ public class RecordMaker {
 			//학번 중복 없을 경우 저장
 			if(!isConstrain)
 			{
-				text += getRandStudentNo() + " " + getRandStudentJumSu() + "\n";
+//				text += getRandStudentNo() + " " + getRandStudentJumSu() + "\n";
+				listData.add(dtoStudent);
 			}
-				
-			
 		}
-		System.out.println(text);
+		
+		for(int i=0; i<listData.size(); i++)
+		{
+			System.out.println(listData.get(i).getStudentNo());
+		}
 		
 		
-		try
+		DataWriter object = new DataWriter()
 		{
-			//txt파일 생성 및 작성 true로 주면 그뒤에 이어서 작성
-			FileWriter fileWriter = new FileWriter(fileName+".txt");
-			
-			fileWriter.write(text);
-			fileWriter.flush();
-			
-			fileWriter.close();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();			
-		}
+
+			@Override
+			public void writeData(List<Student> data) {
+				// TODO Auto-generated method stub
+				try
+				{
+					String text = "";
+					for(int i=0; i<data.size(); i++)
+					{
+						text += data.get(i).getStudentNo()+ " " + data.get(i).getStudentJumsu() + "\n";
+					}
+					
+					//txt파일 생성 및 작성 true로 주면 그뒤에 이어서 작성
+					FileWriter fileWriter = new FileWriter(fileName+".txt");
+					
+					fileWriter.write(text);
+					fileWriter.flush();
+					
+					fileWriter.close();
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();			
+				}
+			}
+		};
+		
+		object.writeData(listData);
+		
 	}
 	
 	
@@ -102,7 +128,6 @@ public class RecordMaker {
 		
 		return result;
 	}
-
 	
 	
 }
