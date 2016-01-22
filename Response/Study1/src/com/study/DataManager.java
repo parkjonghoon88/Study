@@ -4,8 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import com.accesser.DataProvider;
 import com.accesser.DataWriter;
@@ -77,5 +79,79 @@ public class DataManager implements DataWriter, DataProvider{
 		
 	}
 	
+	
+	public String getRandStudentNo()
+	{
+		String result = "";
+		
+		int randomNo = new Random().nextInt(100000);
+		
+		
+		String randomData = "";
+		randomData = String.format("%05d", randomNo); 
+		
+		result = "NT"+ randomData;
+		
+		return result;
+	}
+	
+	
+	public int getRandStudentJumSu()
+	{
+		int result = new Random().nextInt(100);
+		
+		return result;
+	}
+	
+	
+	
+	// 최대 값 구하는 함수
+	public String getMaxData(List<Student> list) {
+		int beforeData = 0;
+
+		for (int i = 0; i < list.size(); i++) {
+			int tempData = list.get(i).getStudentJumsu();
+
+			if (beforeData <= tempData) {
+				beforeData = tempData;
+			}
+		}
+		return Integer.toString(beforeData);
+	}
+
+	// 최소 값 구하는 함수
+	public String getMinData(List<Student> list) {
+		int beforeData = 0;
+
+		for (int i = 0; i < list.size(); i++) {
+			int tempData =  list.get(i).getStudentJumsu();
+
+			if (i == 0) {
+				beforeData = tempData;
+			}
+
+			if (tempData <= beforeData) {
+				beforeData = tempData;
+			}
+		}
+		return Integer.toString(beforeData);
+	}
+
+	// 평균 값 구하는 함수
+	public String getAvgData(List<Student> list) {
+		int sumData = 0;
+
+		for (int i = 0; i < list.size(); i++) {
+			int tempData =  list.get(i).getStudentJumsu();
+			sumData += tempData;
+		}
+
+		String pattern = "####.##";
+		DecimalFormat format = new DecimalFormat(pattern);
+
+		double resultData = sumData / list.size();
+
+		return Double.toString(resultData);
+	}
 
 }

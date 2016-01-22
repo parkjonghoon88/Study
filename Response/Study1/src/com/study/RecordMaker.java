@@ -23,19 +23,23 @@ public class RecordMaker {
 		String text = "";
 		List<Student> listData = new ArrayList<Student>();
 		
+		DataManager dataManager = new DataManager();
+		dataManager.setFileName(fileName);
+		
 		
 		for(int i=0; i<cnt; i++)
 		{
 			
 			Student dtoStudent = new Student();
 			
-			dtoStudent.setStudentNo(getRandStudentNo());
-			dtoStudent.setStudentJumsu(getRandStudentJumSu());
+			
+			dtoStudent.setStudentNo(dataManager.getRandStudentNo());
+			dtoStudent.setStudentJumsu(dataManager.getRandStudentJumSu());
 			
 			
 			boolean isConstrain = false;
 			
-			if(!text.contains(getRandStudentNo()))
+			if(!text.contains(dataManager.getRandStudentNo()))
 			{
 				isConstrain = false;
 			}
@@ -44,8 +48,8 @@ public class RecordMaker {
 				//학번 중복
 				for(int j=0; j<10; j++)
 				{
-					System.out.println("중복 데이터  : " +j  +", "+  getRandStudentNo());
-					if(!text.contains(getRandStudentNo()))
+					System.out.println("중복 데이터  : " +j  +", "+  dataManager.getRandStudentNo());
+					if(!text.contains(dataManager.getRandStudentNo()))
 					{
 						isConstrain = false;
 						break;
@@ -72,35 +76,11 @@ public class RecordMaker {
 		}
 		
 		
-		DataManager dataManager = new DataManager();
-		dataManager.setFileName(fileName);
+		
 		dataManager.writeData(listData);
 		
 	}
 	
-	
-	public static String getRandStudentNo()
-	{
-		String result = "";
-		
-		int randomNo = new Random().nextInt(100000);
-		
-		
-		String randomData = "";
-		randomData = String.format("%05d", randomNo); 
-		
-		result = "NT"+ randomData;
-		
-		return result;
-	}
-	
-	
-	public static int getRandStudentJumSu()
-	{
-		int result = new Random().nextInt(100);
-		
-		return result;
-	}
 	
 	
 }
