@@ -1,11 +1,5 @@
 package com.study;
 
-import java.io.FileWriter;
-import java.util.List;
-
-import com.accesser.DataProvider;
-import com.accesser.DataWriter;
-
 public class Student {
 	
 	private String studentNo = "";

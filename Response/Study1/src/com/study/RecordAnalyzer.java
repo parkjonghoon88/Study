@@ -22,22 +22,13 @@ public class RecordAnalyzer {
 		DataManager dataManager = new DataManager();
 		dataManager.setFileName(dataFile);
 		listData.addAll(dataManager.getStudents());
+		
+		
 
 		if (listData.size() > 0) {
-			if (command.equals("max")) {
-				// 최대값
-				resultValue = dataManager.getMaxData(listData);
-
-			} else if (command.equals("min")) {
-				// 최소값
-				resultValue = dataManager.getMinData(listData);
-			} else if (command.equals("avg")) {
-				// 평균
-				resultValue = dataManager.getAvgData(listData);
-			} else {
-				System.err.println("옵션을 다시 확인해주세요.");
-				System.exit(1);
-			}
+			RandomCreateDataManager dataRandomCreate = new RandomCreateDataManager();
+			resultValue = dataRandomCreate.getAnalyzerData(command, listData);
+			
 		} else {
 			System.err.println("데이터가 존재하지 않습니다.");
 			System.exit(1);
