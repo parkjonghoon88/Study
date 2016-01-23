@@ -2,6 +2,12 @@ package com.study;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.study.accesser.RandomDataProvider;
+import com.study.accesser.DataFileWriter;
+import com.study.accesser.DataProvider;
+import com.study.accesser.DataWriter;
+import com.study.model.Student;
+
 public class RecordMaker {
 	
 
@@ -13,27 +19,24 @@ public class RecordMaker {
 			System.exit(1);
 		}
 		
-		
 		int cnt = Integer.parseInt(args[0]);
 		String fileName = args[1];
-		String text = "";
-		List<Student> listData = new ArrayList<Student>();
 		
-		DataManager dataManager = new DataManager();
-		dataManager.setFileName(fileName);
+		RandomDataProvider provider = new RandomDataProvider();
+		provider.setCnt(cnt);
 		
-		RandomCreateDataManager dataRandomCreate = new RandomCreateDataManager();
-		listData.addAll(dataRandomCreate.getTotalStudent(cnt));
+		DataFileWriter writer = new DataFileWriter();
+		writer.setFileName(fileName);
 		
-		
-		for(int i=0; i<listData.size(); i++)
-		{
-			System.out.println(listData.get(i).getStudentNo() + " " +listData.get(i).getStudentJumsu() );
-		}
-		
-		dataManager.writeData(listData);
-		
+		readAndWrite(provider, writer);
 	}
+	
+	private static void readAndWrite(DataProvider provider, DataWriter writer) {
+		List<Student> listData = provider.getStudents();
+
+		writer.writeData(listData);
+	}
+	
 	
 	
 	

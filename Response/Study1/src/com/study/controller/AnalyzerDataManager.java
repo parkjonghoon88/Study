@@ -1,67 +1,29 @@
-package com.study;
+package com.study.controller;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-public class RandomCreateDataManager {
+import com.study.model.Student;
+
+public class AnalyzerDataManager {
+	
+	private String command;
 	
 	
-	//입력받은 개수만큼 리스트에 랜덤으로 학생 담기
-	public List<Student> getTotalStudent(int cnt)
-	{
-		List<Student> list = new ArrayList<>();
-		String text = "";
-		
-		
-		for(int i=0; i<cnt; i++)
-		{
-			
-			Student dtoStudent = new Student();
-			
-			dtoStudent.setStudentNo(getRandStudentNo());
-			dtoStudent.setStudentJumsu(getRandStudentJumSu());
-			
-			boolean isConstrain = false;
-			
-			if(!text.contains(getRandStudentNo()))
-			{
-				isConstrain = false;
-			}
-			else
-			{
-				//학번 중복
-				for(int j=0; j<10; j++)
-				{
-					System.out.println("중복 데이터  : " +j  +", "+  getRandStudentNo());
-					if(!text.contains(getRandStudentNo()))
-					{
-						isConstrain = false;
-						break;
-					}
-					else
-					{
-						isConstrain = true;
-					}
-				}
-			}
-			
-			
-			//학번 중복 없을 경우 저장
-			if(!isConstrain)
-			{
-				text += getRandStudentNo() + " " + getRandStudentJumSu() + "\n";
-				list.add(dtoStudent);
-			}
-		}
-		
-		return list;
+	
+	public String getCommand() {
+		return command;
 	}
-	
-	
+
+
+	public void setCommand(String command) {
+		this.command = command;
+	}
+
+
 	public String getAnalyzerData(String command, List<Student> listData)
 	{
+		getCommand();
 		String resultValue = "";
 		
 		if (command.equals("max")) {
@@ -81,33 +43,6 @@ public class RandomCreateDataManager {
 		
 		return resultValue;
 	}
-	
-	
-	
-	
-	public String getRandStudentNo()
-	{
-		String result = "";
-		
-		int randomNo = new Random().nextInt(100000);
-		
-		
-		String randomData = "";
-		randomData = String.format("%05d", randomNo); 
-		
-		result = "NT"+ randomData;
-		
-		return result;
-	}
-	
-	
-	public int getRandStudentJumSu()
-	{
-		int result = new Random().nextInt(100);
-		
-		return result;
-	}
-	
 	
 	
 	// 최대 값 구하는 함수

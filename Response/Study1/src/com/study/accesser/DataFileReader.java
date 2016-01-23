@@ -1,20 +1,14 @@
-package com.study;
+package com.study.accesser;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-import com.accesser.DataProvider;
-import com.accesser.DataWriter;
+import com.study.model.Student;
 
-public class DataManager implements DataWriter, DataProvider{
-	
-	
+public class DataFileReader implements DataProvider {
 	private String fileName = "";
 	
 	
@@ -28,7 +22,6 @@ public class DataManager implements DataWriter, DataProvider{
 
 	@Override
 	public List<Student> getStudents() {
-		// TODO Auto-generated method stub
 		List<Student> list = new ArrayList<>();
 		try 
 		{
@@ -52,34 +45,5 @@ public class DataManager implements DataWriter, DataProvider{
 		}
 		return list;
 	}
-
-	@Override
-	public void writeData(List<Student> data) {
-		// TODO Auto-generated method stub
-		try
-		{
-			String text = "";
-			for(int i=0; i<data.size(); i++)
-			{
-				text += data.get(i).getStudentNo()+ " " + data.get(i).getStudentJumsu() + "\n";
-			}
-			
-			//txt파일 생성 및 작성 true로 주면 그뒤에 이어서 작성
-			FileWriter fileWriter = new FileWriter(fileName+".txt");
-			
-			fileWriter.write(text);
-			fileWriter.flush();
-			
-			fileWriter.close();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();			
-		}
-		
-	}
-	
-	
-	
 
 }
