@@ -1,3 +1,5 @@
+package com.study.model;
+
 public class Student {
 	
 	private String studentNo = "";
@@ -18,6 +20,4 @@ public class Student {
 	}
 	
 	
-	
-
 }

@@ -1,21 +1,42 @@
-import java.io.FileWriter;
+package com.study.accesser;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
-public class RecordMaker {
+import com.study.model.Student;
 
-	public static void main(String args[])
+public class RandomDataProvider implements DataProvider{
+	
+	
+	private int cnt = 0;
+	
+	public int getCnt() {
+		return cnt;
+	}
+
+
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
+	
+	public RandomDataProvider(){
+		
+	}
+	
+	public RandomDataProvider(int cnt) {
+		
+		this.cnt = cnt;
+	}
+
+
+	//입력받은 개수만큼 리스트에 랜덤으로 학생 담기
+	@Override
+	public List<Student> getStudents()
 	{
-		if(args.length < 2)
-		{
-			System.err.println("옵션을 입력해주세요");
-			System.exit(1);
-		}
-		
-		
-		int cnt = Integer.parseInt(args[0]);
-		String fileName = args[1];
+		List<Student> list = new ArrayList<>();
 		String text = "";
-		
 		
 		
 		for(int i=0; i<cnt; i++)
@@ -25,7 +46,6 @@ public class RecordMaker {
 			
 			dtoStudent.setStudentNo(getRandStudentNo());
 			dtoStudent.setStudentJumsu(getRandStudentJumSu());
-			
 			
 			boolean isConstrain = false;
 			
@@ -56,31 +76,15 @@ public class RecordMaker {
 			if(!isConstrain)
 			{
 				text += getRandStudentNo() + " " + getRandStudentJumSu() + "\n";
+				list.add(dtoStudent);
 			}
-				
-			
 		}
-		System.out.println(text);
 		
-		
-		try
-		{
-			//txt파일 생성 및 작성 true로 주면 그뒤에 이어서 작성
-			FileWriter fileWriter = new FileWriter(fileName+".txt");
-			
-			fileWriter.write(text);
-			fileWriter.flush();
-			
-			fileWriter.close();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();			
-		}
+		return list;
 	}
 	
 	
-	public static String getRandStudentNo()
+	public String getRandStudentNo()
 	{
 		String result = "";
 		
@@ -96,13 +100,17 @@ public class RecordMaker {
 	}
 	
 	
-	public static int getRandStudentJumSu()
+	public int getRandStudentJumSu()
 	{
 		int result = new Random().nextInt(100);
 		
 		return result;
 	}
-
 	
+	
+	
+	
+
+
 	
 }
