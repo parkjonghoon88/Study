@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		6D1CCC9C1C5363F800321004 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1CCC9B1C5363F800321004 /* main.m */; };
+		6D1CCCA81C53665200321004 /* RecordMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1CCCA71C53665200321004 /* RecordMaker.m */; };
+		6DEAAFFB1C6615C100EBF6A1 /* RecordAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEAAFFA1C6615C100EBF6A1 /* RecordAnalyzer.m */; };
+		6DEAAFFE1C66164900EBF6A1 /* JHDataFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEAAFFD1C66164900EBF6A1 /* JHDataFileReader.m */; };
+		6DECA86F1C623742001DC745 /* JHDataFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DECA86E1C623742001DC745 /* JHDataFileWriter.m */; };
+		6DEDBE7D1C6987E00027504C /* JHMinCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEDBE7C1C6987E00027504C /* JHMinCommand.m */; };
+		6DEDBE801C6987EA0027504C /* JHMaxCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEDBE7F1C6987EA0027504C /* JHMaxCommand.m */; };
+		6DEDBE831C6987F50027504C /* JHAvgCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEDBE821C6987F50027504C /* JHAvgCommand.m */; };
+		6DEECCD81C5C688F003DE0B4 /* JHStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEECCD71C5C688F003DE0B4 /* JHStudent.m */; };
+		6DEECCDD1C5C777A003DE0B4 /* JHRandomDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEECCDC1C5C777A003DE0B4 /* JHRandomDataProvider.m */; };
+		6DEECCE01C5C884C003DE0B4 /* RandomMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEECCDF1C5C884C003DE0B4 /* RandomMain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +35,30 @@
 /* Begin PBXFileReference section */
 		6D1CCC981C5363F800321004 /* Study2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Study2; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1CCC9B1C5363F800321004 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6D1CCCA61C53665200321004 /* RecordMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordMaker.h; sourceTree = "<group>"; };
+		6D1CCCA71C53665200321004 /* RecordMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordMaker.m; sourceTree = "<group>"; };
+		6DB7CED41C69DE6B00E784E0 /* JHStudent+PrivateWrite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JHStudent+PrivateWrite.h"; sourceTree = "<group>"; };
+		6DEAAFF91C6615C100EBF6A1 /* RecordAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordAnalyzer.h; sourceTree = "<group>"; };
+		6DEAAFFA1C6615C100EBF6A1 /* RecordAnalyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordAnalyzer.m; sourceTree = "<group>"; };
+		6DEAAFFC1C66164900EBF6A1 /* JHDataFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHDataFileReader.h; sourceTree = "<group>"; };
+		6DEAAFFD1C66164900EBF6A1 /* JHDataFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHDataFileReader.m; sourceTree = "<group>"; };
+		6DECA86D1C623742001DC745 /* JHDataFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHDataFileWriter.h; sourceTree = "<group>"; };
+		6DECA86E1C623742001DC745 /* JHDataFileWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHDataFileWriter.m; sourceTree = "<group>"; };
+		6DEDBE7B1C6987E00027504C /* JHMinCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMinCommand.h; sourceTree = "<group>"; };
+		6DEDBE7C1C6987E00027504C /* JHMinCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMinCommand.m; sourceTree = "<group>"; };
+		6DEDBE7E1C6987EA0027504C /* JHMaxCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMaxCommand.h; sourceTree = "<group>"; };
+		6DEDBE7F1C6987EA0027504C /* JHMaxCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMaxCommand.m; sourceTree = "<group>"; };
+		6DEDBE811C6987F50027504C /* JHAvgCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAvgCommand.h; sourceTree = "<group>"; };
+		6DEDBE821C6987F50027504C /* JHAvgCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAvgCommand.m; sourceTree = "<group>"; };
+		6DEDBE891C69941C0027504C /* JHCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCommand.h; sourceTree = "<group>"; };
+		6DEECCD61C5C688F003DE0B4 /* JHStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHStudent.h; sourceTree = "<group>"; };
+		6DEECCD71C5C688F003DE0B4 /* JHStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHStudent.m; sourceTree = "<group>"; };
+		6DEECCD91C5C764F003DE0B4 /* JHDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHDataProvider.h; sourceTree = "<group>"; };
+		6DEECCDA1C5C76DB003DE0B4 /* JHDataWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHDataWriter.h; sourceTree = "<group>"; };
+		6DEECCDB1C5C777A003DE0B4 /* JHRandomDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHRandomDataProvider.h; sourceTree = "<group>"; };
+		6DEECCDC1C5C777A003DE0B4 /* JHRandomDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHRandomDataProvider.m; sourceTree = "<group>"; };
+		6DEECCDE1C5C884C003DE0B4 /* RandomMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomMain.h; sourceTree = "<group>"; };
+		6DEECCDF1C5C884C003DE0B4 /* RandomMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomMain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +91,65 @@
 		6D1CCC9A1C5363F800321004 /* Study2 */ = {
 			isa = PBXGroup;
 			children = (
-				6D1CCCA21C53645300321004 /* New Group */,
+				6D1CCCA51C5365D800321004 /* model */,
+				6D1CCCA41C5365D000321004 /* command */,
+				6D1CCCA31C5365C400321004 /* accesser */,
+				6D1CCCA21C53645300321004 /* study */,
 				6D1CCC9B1C5363F800321004 /* main.m */,
+				6DEECCDE1C5C884C003DE0B4 /* RandomMain.h */,
+				6DEECCDF1C5C884C003DE0B4 /* RandomMain.m */,
 			);
 			path = Study2;
 			sourceTree = "<group>";
 		};
-		6D1CCCA21C53645300321004 /* New Group */ = {
+		6D1CCCA21C53645300321004 /* study */ = {
 			isa = PBXGroup;
 			children = (
+				6D1CCCA61C53665200321004 /* RecordMaker.h */,
+				6D1CCCA71C53665200321004 /* RecordMaker.m */,
+				6DEAAFF91C6615C100EBF6A1 /* RecordAnalyzer.h */,
+				6DEAAFFA1C6615C100EBF6A1 /* RecordAnalyzer.m */,
 			);
-			name = "New Group";
+			name = study;
+			sourceTree = "<group>";
+		};
+		6D1CCCA31C5365C400321004 /* accesser */ = {
+			isa = PBXGroup;
+			children = (
+				6DEECCD91C5C764F003DE0B4 /* JHDataProvider.h */,
+				6DEECCDA1C5C76DB003DE0B4 /* JHDataWriter.h */,
+				6DEECCDB1C5C777A003DE0B4 /* JHRandomDataProvider.h */,
+				6DEECCDC1C5C777A003DE0B4 /* JHRandomDataProvider.m */,
+				6DECA86D1C623742001DC745 /* JHDataFileWriter.h */,
+				6DECA86E1C623742001DC745 /* JHDataFileWriter.m */,
+				6DEAAFFC1C66164900EBF6A1 /* JHDataFileReader.h */,
+				6DEAAFFD1C66164900EBF6A1 /* JHDataFileReader.m */,
+			);
+			name = accesser;
+			sourceTree = "<group>";
+		};
+		6D1CCCA41C5365D000321004 /* command */ = {
+			isa = PBXGroup;
+			children = (
+				6DEDBE7B1C6987E00027504C /* JHMinCommand.h */,
+				6DEDBE7C1C6987E00027504C /* JHMinCommand.m */,
+				6DEDBE7E1C6987EA0027504C /* JHMaxCommand.h */,
+				6DEDBE7F1C6987EA0027504C /* JHMaxCommand.m */,
+				6DEDBE811C6987F50027504C /* JHAvgCommand.h */,
+				6DEDBE821C6987F50027504C /* JHAvgCommand.m */,
+				6DEDBE891C69941C0027504C /* JHCommand.h */,
+			);
+			name = command;
+			sourceTree = "<group>";
+		};
+		6D1CCCA51C5365D800321004 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				6DEECCD61C5C688F003DE0B4 /* JHStudent.h */,
+				6DEECCD71C5C688F003DE0B4 /* JHStudent.m */,
+				6DB7CED41C69DE6B00E784E0 /* JHStudent+PrivateWrite.h */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +208,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEDBE801C6987EA0027504C /* JHMaxCommand.m in Sources */,
+				6DEECCE01C5C884C003DE0B4 /* RandomMain.m in Sources */,
+				6DEECCD81C5C688F003DE0B4 /* JHStudent.m in Sources */,
+				6DECA86F1C623742001DC745 /* JHDataFileWriter.m in Sources */,
+				6DEECCDD1C5C777A003DE0B4 /* JHRandomDataProvider.m in Sources */,
+				6DEAAFFE1C66164900EBF6A1 /* JHDataFileReader.m in Sources */,
+				6DEAAFFB1C6615C100EBF6A1 /* RecordAnalyzer.m in Sources */,
+				6DEDBE7D1C6987E00027504C /* JHMinCommand.m in Sources */,
+				6DEDBE831C6987F50027504C /* JHAvgCommand.m in Sources */,
 				6D1CCC9C1C5363F800321004 /* main.m in Sources */,
+				6D1CCCA81C53665200321004 /* RecordMaker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +307,7 @@
 		6D1CCCA01C5363F800321004 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -222,6 +315,7 @@
 		6D1CCCA11C5363F800321004 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -245,6 +339,7 @@
 				6D1CCCA11C5363F800321004 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

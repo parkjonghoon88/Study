@@ -1,0 +1,15 @@
+//
+//  JHCommand2.pch
+//  Study2
+//
+//  Created by 박종훈 on 2016. 2. 9..
+//  Copyright © 2016년 박종훈. All rights reserved.
+//
+
+#ifndef JHCommand2_pch
+#define JHCommand2_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* JHCommand2_pch */
